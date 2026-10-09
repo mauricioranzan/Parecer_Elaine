@@ -3,330 +3,405 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dossiê Técnico-Jurídico | Regularização Fundiária Rural - Guaíba/RS</title>
+  <title>Dossiê Interativo de Inteligência Fundiária | Mauricio Ranzan Advocacia Especializada</title>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome Icons -->
+  
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
+  
+  <!-- Google Fonts: Josefin Sans & Poppins (Manual da Marca Mauricio Ranzan) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   
+  <!-- Configuração de Design Tokens da Marca -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
+            title: ['"Josefin Sans"', 'sans-serif'],
+            sans: ['Poppins', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
             brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              500: '#15803d',
-              600: '#166534',
-              700: '#14532d',
-              800: '#052e16',
-              900: '#022c22',
-            },
-            rural: {
-              earth: '#78350f',
-              sand: '#fef3c7',
-              accent: '#d97706',
+              orange: '#C35717',     /* Laranja Institucional */
+              orangeLight: '#e06b26',
+              orangeDark: '#993f0b',
+              green: '#403812',      /* Verde Musgo / Elegante */
+              greenDark: '#28230b',
+              greenLight: '#594e1d',
+              gray: '#E1E1E1',       /* Cinza Oficial */
+              cream: '#F9F8F5',      /* Fundo Quente */
+              card: '#FFFFFF',
             }
           }
         }
       }
     }
   </script>
+
   <style>
-    .tab-active {
-      border-color: #15803d;
-      color: #15803d;
-      background-color: #f0fdf4;
+    body {
+      background-color: #F7F5F0;
+      color: #2D281E;
     }
-    .custom-scroll::-webkit-scrollbar {
+    .font-brand-title {
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .tab-active-strat {
+      background-color: #C35717 !important;
+      color: #FFFFFF !important;
+      border-color: #C35717 !important;
+      box-shadow: 0 4px 12px rgba(195, 87, 23, 0.25);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background-color: #cbd5e1;
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #C35717;
       border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background-color: #E1E1E1;
     }
     @media print {
       .no-print { display: none !important; }
-      body { background-color: #ffffff; color: #000000; }
-      .print-shadow-none { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+      body { background-color: #FFFFFF; color: #000000; }
+      .print-border { border: 1px solid #CBD5E1 !important; box-shadow: none !important; }
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-brand-500 selection:text-white">
+<body class="antialiased selection:bg-brand-orange selection:text-white">
 
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+  <header class="sticky top-0 z-50 bg-[#403812] text-white border-b-2 border-brand-orange shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-md shadow-brand-600/30">
-            <i class="fa-solid fa-map-location-dot text-lg"></i>
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logotipo e Identidade Visual Mauricio Ranzan -->
+        <div class="flex items-center space-x-3.5">
+          <!-- Ícone Balança da Justiça (Harmonizado com o Rodapé) -->
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/10 border border-brand-orange/40 flex items-center justify-center text-brand-orange shadow-inner">
+            <i class="fa-solid fa-scale-balanced text-xl sm:text-2xl"></i>
           </div>
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Dossiê de Inteligência Fundiária</span>
-            <h1 class="text-base font-extrabold text-slate-900 leading-tight">Guaíba/RS • Imóvel Rural (8,30 ha)</h1>
+            <span class="block text-lg sm:text-xl font-bold tracking-wider font-brand-title uppercase leading-none text-white">
+              MAURICIO RANZAN
+            </span>
+            <span class="block text-[10px] sm:text-xs font-semibold tracking-widest text-brand-orange uppercase font-brand-title mt-1">
+              ADVOCACIA ESPECIALIZADA • OAB/SC 79.625
+            </span>
           </div>
         </div>
 
-        <!-- Navigation actions -->
+        <!-- Meta Informações do Processo e Ações -->
         <div class="flex items-center space-x-2 sm:space-x-4">
-          <div class="hidden md:flex items-center space-x-1 text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-1"></span>
-            <span>Interessada: <strong>Elaine M. K. Monteiro</strong></span>
+          <div class="hidden lg:flex flex-col text-right">
+            <span class="text-xs text-brand-gray font-mono">Comarca de Guaíba/RS</span>
+            <span class="text-xs font-medium text-white">Cliente: <strong>Elaine M. K. Monteiro</strong></span>
           </div>
-          <button onclick="window.print()" class="no-print inline-flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition shadow-sm">
+          <button onclick="window.print()" class="no-print inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-brand-orange hover:bg-brand-orangeDark text-white transition shadow-sm">
             <i class="fa-solid fa-print"></i>
             <span class="hidden sm:inline">Imprimir / Salvar PDF</span>
           </button>
         </div>
+
       </div>
     </div>
-  </nav>
+  </header>
 
-  <div class="bg-amber-500/10 border-b border-amber-500/30 px-4 py-2.5">
-    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs text-amber-900">
-      <div class="flex items-center space-x-2">
-        <i class="fa-solid fa-triangle-exclamation text-amber-600 text-sm"></i>
-        <span><strong>Alerta Metodológico Preliminar:</strong> Estratégia balizada no relato fático e cadastral. A via final exige auditoria eletrônica das 2 matrículas-mãe de Guaíba/RS.</span>
+  <div class="bg-[#FFF6F0] border-b border-[#F2D4C2] px-4 py-2.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-xs text-[#7A330B] gap-3">
+      <div class="flex items-center space-x-2.5">
+        <i class="fa-solid fa-triangle-exclamation text-brand-orange text-sm flex-shrink-0"></i>
+        <span><strong>Alerta Metodológico Condicionante:</strong> Estratégia orientativa balizada no relato fático. A definição irrevogável da rota registral depende da auditoria eletrônica das 2 matrículas-mãe de Guaíba/RS.</span>
       </div>
-      <span class="hidden lg:inline-block font-mono bg-amber-100 text-amber-800 px-2 py-0.5 rounded border border-amber-300">Parecer Técnico-Jurídico 2026</span>
+      <span class="hidden md:inline-block font-mono bg-white text-brand-orange px-2.5 py-1 rounded border border-brand-orange/30 font-semibold whitespace-nowrap flex-shrink-0 shadow-xs">
+        Outubro / 2026
+      </span>
     </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+    <!-- Seção de Indicadores Chave da Gleba -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Card 1: Área Pretendida -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
         <div class="flex justify-between items-start">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Área Pretendida</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1 font-mono">8,3000 ha</h3>
-            <p class="text-xs text-slate-500 mt-1">Gleba contínua e delimitada</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-[#6B6355] font-brand-title">Polígono Consolidado</p>
+            <h3 class="text-2xl font-bold text-[#403812] mt-1 font-mono">8,3000 ha</h3>
+            <p class="text-xs text-[#807765] mt-0.5">Unidade familiar produtiva</p>
           </div>
-          <span class="p-2.5 rounded-xl bg-emerald-50 text-brand-600 border border-emerald-100">
-            <i class="fa-solid fa-vector-square text-lg"></i>
+          <span class="p-2.5 rounded-xl bg-orange-50 text-brand-orange border border-orange-200">
+            <i class="fa-solid fa-draw-polygon text-lg"></i>
           </span>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <span class="text-slate-600">Inserida em gleba de:</span>
-          <span class="font-bold text-slate-900 font-mono">32,0000 ha</span>
+          <span class="text-slate-600">Inserido na macrogleba:</span>
+          <span class="font-bold text-[#403812] font-mono">32,0000 ha</span>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+      <!-- Card 2: Tempo de Posse -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
         <div class="flex justify-between items-start">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Tempo de Posse Consolidada</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1 font-mono">27 a 30 anos</h3>
-            <p class="text-xs text-emerald-600 font-semibold mt-1"><i class="fa-solid fa-check mr-1"></i>Posse mansa e pro labore</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-[#6B6355] font-brand-title">Tempo de Posse Qualificada</p>
+            <h3 class="text-2xl font-bold text-brand-orange mt-1 font-mono">27 a 30 anos</h3>
+            <p class="text-xs text-emerald-700 font-semibold mt-0.5"><i class="fa-solid fa-check mr-1"></i>Posse contínua pro labore</p>
           </div>
-          <span class="p-2.5 rounded-xl bg-amber-50 text-amber-600 border border-amber-100">
+          <span class="p-2.5 rounded-xl bg-[#403812]/10 text-[#403812] border border-[#403812]/20">
             <i class="fa-solid fa-clock-rotate-left text-lg"></i>
           </span>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <span class="text-slate-600">Início da ocupação:</span>
-          <span class="font-bold text-slate-900 font-mono">1996 e 1999</span>
+          <span class="text-slate-600">Início das ocupações:</span>
+          <span class="font-bold text-[#403812] font-mono">1996 e 1999</span>
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+      <!-- Card 3: Índices INCRA Auditados -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
         <div class="flex justify-between items-start">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">FMP Guaíba / INCRA</p>
-            <h3 class="text-2xl font-black text-slate-900 mt-1 font-mono">2,0000 ha</h3>
-            <p class="text-xs text-brand-600 font-medium mt-1">Módulo Fiscal: 18,0 ha</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-[#6B6355] font-brand-title">FMP Guaíba (INCRA)</p>
+            <h3 class="text-2xl font-bold text-[#403812] mt-1 font-mono">2,0000 ha</h3>
+            <p class="text-xs text-brand-orange font-medium mt-0.5">Módulo Fiscal Oficial: <strong>14,0 ha</strong></p>
           </div>
-          <span class="p-2.5 rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
+          <span class="p-2.5 rounded-xl bg-amber-50 text-amber-700 border border-amber-200">
             <i class="fa-solid fa-ruler-combined text-lg"></i>
           </span>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <span class="text-slate-600">Parcelas atendem à FMP:</span>
-          <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">100% Regular</span>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs gap-2">
+          <span class="text-slate-600">Parcelas superam a FMP:</span>
+          <span class="font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 whitespace-nowrap flex-shrink-0">100% Divisível</span>
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+      <!-- Card 4: Inventário Travado -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
         <div class="flex justify-between items-start">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Inventário Judicial Mãe</p>
-            <h3 class="text-2xl font-black text-rose-600 mt-1 font-mono">26 anos parado</h3>
-            <p class="text-xs text-rose-500 font-semibold mt-1">Imbróglio sucessório grave</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-[#6B6355] font-brand-title">Inventário Mãe Parado</p>
+            <h3 class="text-2xl font-bold text-rose-700 mt-1 font-mono">Há 26 anos</h3>
+            <p class="text-xs text-rose-600 font-semibold mt-0.5">Óbito pendente e curatela</p>
           </div>
-          <span class="p-2.5 rounded-xl bg-rose-50 text-rose-600 border border-rose-100">
-            <i class="fa-solid fa-lock text-lg"></i>
+          <span class="p-2.5 rounded-xl bg-rose-50 text-rose-700 border border-rose-200">
+            <i class="fa-solid fa-link-slash text-lg"></i>
           </span>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
           <span class="text-slate-600">Recomendação técnica:</span>
-          <span class="font-bold text-brand-600">Desvinculação total</span>
+          <span class="font-bold text-brand-orange">Desvinculação Direta</span>
         </div>
       </div>
+
     </section>
 
     <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between pb-6 border-b border-slate-100 gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-100">Diagnóstico Espacial & Dominial</span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">A Composição do Polígono de 8,3000 ha</h2>
-          <p class="text-sm text-slate-500 mt-1">Entenda como a área se divide em duas realidades jurídicas heterogêneas contíguas.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-orange bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200 font-brand-title">
+            Diagnóstico Espacial & Mosaico Cadastral
+          </span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#403812] font-brand-title mt-2">
+            A Anatomia Fundiária do Polígono de 8,3000 ha
+          </h2>
+          <p class="text-sm text-slate-500 mt-1">
+            Visualização cartográfica das duas situações jurídicas heterogêneas inseridas no condomínio de 32,0000 ha.
+          </p>
         </div>
-        <!-- Toggle button for view modes -->
-        <div class="flex items-center space-x-2 bg-slate-100 p-1 rounded-xl self-start">
-          <button id="btn-view-all" onclick="setPolygonFilter('all')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-white shadow-sm text-slate-800 transition">Todos (8,3 ha)</button>
-          <button id="btn-view-titulada" onclick="setPolygonFilter('titulada')" class="px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-lg transition">Titulada (5,3 ha)</button>
-          <button id="btn-view-posse" onclick="setPolygonFilter('posse')" class="px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-lg transition">Posse (3,0 ha)</button>
+        
+        <!-- Controles Interativos de Filtro -->
+        <div class="flex flex-wrap sm:flex-nowrap items-center gap-1.5 bg-slate-100 p-1.5 rounded-xl self-start">
+          <button id="btn-svg-all" onclick="updateGlebaView('all')" class="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-white text-[#403812] shadow-sm transition whitespace-nowrap">
+            Área Total (8,3 ha)
+          </button>
+          <button id="btn-svg-53" onclick="updateGlebaView('titulada')" class="px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-[#403812] rounded-lg transition whitespace-nowrap">
+            Gleba 01 (5,3 ha)
+          </button>
+          <button id="btn-svg-30" onclick="updateGlebaView('posse')" class="px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-[#403812] rounded-lg transition whitespace-nowrap">
+            Gleba 02 (3,0 ha)
+          </button>
         </div>
       </div>
 
+      <!-- Área de Visualização Gráfica -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6 items-center">
-        <!-- SVG Graphic Representation -->
-        <div class="lg:col-span-7 bg-slate-950 p-6 rounded-2xl relative shadow-inner overflow-hidden">
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4 border-b border-slate-800 pb-2">
-            <span><i class="fa-solid fa-satellite mr-1.5 text-emerald-400"></i>MOSAICO ESQUEMÁTICO - GUAÍBA/RS</span>
-            <span class="text-slate-500">SIRGAS 2000 UTM</span>
+        
+        <!-- Gráfico Vetorial SVG -->
+        <div class="lg:col-span-7 bg-[#28230B] p-6 rounded-2xl relative shadow-inner overflow-hidden border border-[#403812]">
+          <div class="flex items-center justify-between text-xs font-mono text-slate-300 mb-4 border-b border-white/10 pb-2">
+            <span><i class="fa-solid fa-satellite-dish mr-1.5 text-brand-orange"></i>MOSAICO ESQUEMÁTICO RURAL • GUAÍBA/RS</span>
+            <span class="text-brand-gray">SIRGAS 2000 UTM</span>
           </div>
 
-          <!-- Interactive SVG diagram -->
           <svg viewBox="0 0 600 360" class="w-full h-auto rounded-lg">
-            <!-- Macro Gleba (32 ha) Outline -->
-            <rect x="20" y="20" width="560" height="320" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2" stroke-dasharray="6,6"/>
-            <text x="35" y="45" fill="#64748b" font-size="12" font-family="monospace">GLEBA MAIOR REGISTRADA (32,0000 ha - CONDOMÍNIO PRO INDIVISO / 2 MATRÍCULAS)</text>
+            <!-- Macro Gleba de 32 ha -->
+            <rect x="20" y="20" width="560" height="320" rx="12" fill="#1C1808" stroke="#403812" stroke-width="2.5" stroke-dasharray="6,6"/>
+            <text x="35" y="45" fill="#A89E8C" font-size="11" font-family="'Josefin Sans', sans-serif" font-weight="bold">
+              MATRÍCULAS-MÃE REGISTRADAS (32,0000 ha) — CONDOMÍNIO PRO INDIVISO EM INVENTÁRIO
+            </text>
 
-            <!-- Remanescente do Espólio -->
-            <path d="M 20 20 L 580 20 L 580 340 L 380 340 L 380 100 L 20 100 Z" fill="#1e293b" opacity="0.4"/>
-            <text x="400" y="190" fill="#94a3b8" font-size="12" font-weight="600" text-anchor="middle">ÁREA REMANESCENTE DO ESPÓLIO</text>
-            <text x="400" y="210" fill="#64748b" font-size="11" text-anchor="middle">23,7000 ha (Em inventário travado há 26 anos)</text>
+            <!-- Área Remanescente do Espólio (23,7 ha) -->
+            <path d="M 20 20 L 580 20 L 580 340 L 400 340 L 400 110 L 20 110 Z" fill="#2E2812" opacity="0.65"/>
+            <text x="420" y="195" fill="#D4CCA9" font-size="12" font-weight="600" text-anchor="middle" font-family="'Josefin Sans', sans-serif">
+              REMANESCENTE DO ESPÓLIO
+            </text>
+            <text x="420" y="215" fill="#A89E8C" font-size="11" text-anchor="middle" font-family="monospace">
+              23,7000 ha (Em inventário travado)
+            </text>
 
-            <!-- Gleba Titulada 5.3 ha -->
-            <g id="svg-gleba-titulada" class="cursor-pointer transition-all duration-300 hover:opacity-90" onclick="setPolygonFilter('titulada')">
-              <rect x="40" y="120" width="200" height="200" rx="8" fill="#166534" stroke="#4ade80" stroke-width="2.5"/>
-              <text x="140" y="195" fill="#f0fdf4" font-size="15" font-weight="bold" text-anchor="middle">GLEBA 01 (5,30 ha)</text>
-              <text x="140" y="215" fill="#bbf7d0" font-size="11" font-weight="600" text-anchor="middle">TITULADA (Escritura 1996)</text>
-              <text x="140" y="235" fill="#86efac" font-size="10" font-family="monospace" text-anchor="middle">Via Ideal: ESTREMAÇÃO</text>
-              <circle cx="50" cy="130" r="4" fill="#4ade80"/>
-              <circle cx="230" cy="130" r="4" fill="#4ade80"/>
-              <circle cx="230" cy="310" r="4" fill="#4ade80"/>
-              <circle cx="50" cy="310" r="4" fill="#4ade80"/>
+            <!-- Gleba 01: 5,30 ha (Titulada / Estremação) -->
+            <g id="gleba-53-group" class="cursor-pointer transition-all duration-300" onclick="updateGlebaView('titulada')">
+              <rect x="40" y="125" width="215" height="195" rx="8" fill="#403812" stroke="#A6943C" stroke-width="2.5"/>
+              <text x="147" y="195" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle" font-family="'Josefin Sans', sans-serif">
+                GLEBA 01 (5,30 ha)
+              </text>
+              <text x="147" y="215" fill="#F0E8BF" font-size="11" font-weight="600" text-anchor="middle">
+                Fração Ideal Escriturada (1996)
+              </text>
+              <text x="147" y="235" fill="#C35717" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">
+                Via Ideal: ESTREMAÇÃO RURAL
+              </text>
+              <!-- Vértices -->
+              <circle cx="48" cy="133" r="4" fill="#C35717"/>
+              <circle cx="247" cy="133" r="4" fill="#C35717"/>
+              <circle cx="247" cy="312" r="4" fill="#C35717"/>
+              <circle cx="48" cy="312" r="4" fill="#C35717"/>
             </g>
 
-            <!-- Gleba Posse 3.0 ha -->
-            <g id="svg-gleba-posse" class="cursor-pointer transition-all duration-300 hover:opacity-90" onclick="setPolygonFilter('posse')">
-              <rect x="245" y="120" width="125" height="200" rx="8" fill="#9a3412" stroke="#fb923c" stroke-width="2.5"/>
-              <text x="307" y="195" fill="#fff7ed" font-size="15" font-weight="bold" text-anchor="middle">GLEBA 02 (3,00 ha)</text>
-              <text x="307" y="215" fill="#fed7aa" font-size="11" font-weight="600" text-anchor="middle">POSSE FÁTICA (1999)</text>
-              <text x="307" y="235" fill="#fdba74" font-size="10" font-family="monospace" text-anchor="middle">Via Ideal: USUCAPIÃO</text>
-              <circle cx="255" cy="130" r="4" fill="#fb923c"/>
-              <circle cx="360" cy="130" r="4" fill="#fb923c"/>
-              <circle cx="360" cy="310" r="4" fill="#fb923c"/>
-              <circle cx="255" cy="310" r="4" fill="#fb923c"/>
+            <!-- Gleba 02: 3,00 ha (Posse / Usucapião) -->
+            <g id="gleba-30-group" class="cursor-pointer transition-all duration-300" onclick="updateGlebaView('posse')">
+              <rect x="265" y="125" width="125" height="195" rx="8" fill="#C35717" stroke="#FF8A47" stroke-width="2.5"/>
+              <text x="327" y="195" fill="#FFFFFF" font-size="15" font-weight="bold" text-anchor="middle" font-family="'Josefin Sans', sans-serif">
+                GLEBA 02 (3,00 ha)
+              </text>
+              <text x="327" y="215" fill="#FFE2D1" font-size="11" font-weight="600" text-anchor="middle">
+                Posse Contratual (1999)
+              </text>
+              <text x="327" y="235" fill="#FFF" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">
+                Via Ideal: USUCAPIÃO
+              </text>
+              <!-- Vértices -->
+              <circle cx="273" cy="133" r="4" fill="#FFFFFF"/>
+              <circle cx="382" cy="133" r="4" fill="#FFFFFF"/>
+              <circle cx="382" cy="312" r="4" fill="#FFFFFF"/>
+              <circle cx="273" cy="312" r="4" fill="#FFFFFF"/>
             </g>
 
-            <!-- Divisa Contígua / Perímetro Global -->
-            <rect x="36" y="116" width="338" height="208" rx="10" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"/>
-            <text x="205" y="345" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">PERÍMETRO GLOBAL TOTAL: 8,3000 ha (UNIDADE FAMILIAR DE FATO)</text>
+            <!-- Perímetro Global Unificado -->
+            <rect x="36" y="121" width="358" height="203" rx="10" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="215" y="342" fill="#E1E1E1" font-size="11" font-weight="bold" text-anchor="middle" font-family="'Josefin Sans', sans-serif">
+              PERÍMETRO FAMILIAR TOTAL CONSOLIDADO: 8,3000 ha
+            </text>
           </svg>
 
-          <!-- SVG Legend -->
-          <div class="mt-4 flex flex-wrap gap-4 text-xs text-slate-300 border-t border-slate-800 pt-3">
+          <!-- Legenda do Mosaico -->
+          <div class="mt-4 flex flex-wrap gap-4 text-xs text-slate-200 border-t border-white/10 pt-3">
             <div class="flex items-center space-x-2">
-              <span class="w-3 h-3 rounded bg-emerald-600 border border-emerald-400"></span>
-              <span>Fração Escriturada (5,3 ha - 63,8%)</span>
+              <span class="w-3 h-3 rounded bg-[#403812] border border-[#A6943C]"></span>
+              <span>Gleba 01 (5,30 ha - Titulada)</span>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="w-3 h-3 rounded bg-amber-700 border border-amber-400"></span>
-              <span>Posse Contrato Gaveta (3,0 ha - 36,2%)</span>
+              <span class="w-3 h-3 rounded bg-brand-orange border border-[#FF8A47]"></span>
+              <span>Gleba 02 (3,00 ha - Posse)</span>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="w-3 h-3 rounded border border-dashed border-sky-400"></span>
-              <span>Polígono Unificado (8,3 ha)</span>
+              <span class="w-3 h-3 rounded border border-dashed border-white"></span>
+              <span>Perímetro Total (8,30 ha)</span>
             </div>
           </div>
         </div>
 
-        <!-- Details Card based on filter -->
+        <!-- Painel de Detalhes Dinâmicos -->
         <div class="lg:col-span-5 space-y-4">
-          <div id="info-card-content" class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3 transition-all">
-            <!-- Dynamic JavaScript content injected here -->
+          <div id="card-gleba-details" class="bg-brand-cream border border-[#E8E4DA] rounded-2xl p-5 space-y-3 transition-all">
+            <!-- Conteúdo Injetado por JS -->
           </div>
 
-          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 text-xs text-blue-900 flex items-start space-x-3">
-            <i class="fa-solid fa-circle-info text-blue-600 text-base mt-0.5"></i>
+          <!-- Card de Avaliação Agrária -->
+          <div class="bg-amber-50/80 border border-amber-200 rounded-2xl p-4 text-xs text-[#594208] flex items-start space-x-3">
+            <i class="fa-solid fa-circle-check text-brand-orange text-base mt-0.5 flex-shrink-0"></i>
             <div>
-              <strong class="block font-semibold">Fração Mínima de Parcelamento (FMP):</strong>
-              Em Guaíba/RS, a FMP rural fixada pelo INCRA é de <strong>2,0000 ha</strong>. Ambas as parcelas (5,3 ha e 3,0 ha) superam isoladamente a fração mínima, o que viabiliza a abertura de matrículas autônomas sem óbice da legislação agrária.
+              <strong class="block font-semibold text-sm font-brand-title">Conformidade com a Legislação Agrária:</strong>
+              Em Guaíba/RS, a Fração Mínima de Parcelamento (FMP) é de <strong>2,0000 ha</strong> e o Módulo Fiscal é de <strong>14,0000 ha</strong>. Tanto a parcela de 5,3 ha quanto a de 3,0 ha superam a FMP individualmente, viabilizando abertura de matrículas sem óbice do art. 8º da Lei nº 5.868/1972.
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
       <div class="max-w-3xl">
-        <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-100">Fundamentação Vinculante</span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">Por que o Inventário Parado NÃO Impede a Usucapião?</h2>
-        <p class="text-sm text-slate-500 mt-1">A superação do mito jurídico de que bens arrolados em inventário judicial ativo não podem sofrer prescrição aquisitiva.</p>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-orange bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200 font-brand-title">
+          Fundamentação Dogmática & Precedentes
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-[#403812] font-brand-title mt-2">
+          Por que o Inventário Parado NÃO Impede a Usucapião?
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">
+          Superação do mito jurídico de que bens componentes de monte hereditário indiviso são imprescritíveis.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        <!-- Principle 1 -->
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-brand-500 transition">
-          <div class="w-9 h-9 rounded-lg bg-emerald-100 text-brand-700 flex items-center justify-center font-bold text-sm mb-3">
+        
+        <!-- Pilar 1 -->
+        <div class="bg-brand-cream rounded-xl p-5 border border-[#E8E4DA] hover:border-brand-orange transition">
+          <div class="w-9 h-9 rounded-lg bg-[#403812] text-white flex items-center justify-center font-bold text-sm mb-3 font-brand-title">
             01
           </div>
-          <h3 class="font-bold text-slate-900 text-base">Aquisição Originária vs. Saisine</h3>
+          <h3 class="font-bold text-[#403812] text-base font-brand-title">Aquisição Originária vs. Saisine</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            A <em>saisine</em> (art. 1.784 do CC) e a indivisibilidade da herança (art. 1.791 do CC) operam somente na sucessão derivada entre herdeiros. A usucapião é aquisição originária: faz nascer um direito novo e rompe com os vícios da cadeia pretérita.
+            A <em>saisine</em> (art. 1.784 CC) e a indivisibilidade da herança (art. 1.791 CC) regulam apenas a sucessão derivada. A usucapião é aquisição originária: cria um direito novo e rompe definitivamente com os vícios da cadeia pretérita.
           </p>
         </div>
 
-        <!-- Principle 2 -->
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-brand-500 transition">
-          <div class="w-9 h-9 rounded-lg bg-emerald-100 text-brand-700 flex items-center justify-center font-bold text-sm mb-3">
+        <!-- Pilar 2 -->
+        <div class="bg-brand-cream rounded-xl p-5 border border-[#E8E4DA] hover:border-brand-orange transition">
+          <div class="w-9 h-9 rounded-lg bg-[#403812] text-white flex items-center justify-center font-bold text-sm mb-3 font-brand-title">
             02
           </div>
-          <h3 class="font-bold text-slate-900 text-base">Ausência de Oposição Fática</h3>
+          <h3 class="font-bold text-[#403812] text-base font-brand-title">Ausência de Oposição Fática</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            O mero arrolamento do imóvel nas primeiras declarações de inventário não interrompe a prescrição aquisitiva. Para desqualificar a posse mansa, a lei exige oposição real (ação possessória ou reivindicatória com citação).
+            O mero arrolamento do bem no inventário não interrompe a prescrição aquisitiva. Para desqualificar a posse mansa, exige-se ato inequívoco e juridicamente eficaz tendente a reaver a posse material (ações possessórias ou reivindicatórias).
           </p>
         </div>
 
-        <!-- Principle 3 -->
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-brand-500 transition">
-          <div class="w-9 h-9 rounded-lg bg-emerald-100 text-brand-700 flex items-center justify-center font-bold text-sm mb-3">
+        <!-- Pilar 3 -->
+        <div class="bg-brand-cream rounded-xl p-5 border border-[#E8E4DA] hover:border-brand-orange transition">
+          <div class="w-9 h-9 rounded-lg bg-[#403812] text-white flex items-center justify-center font-bold text-sm mb-3 font-brand-title">
             03
           </div>
-          <h3 class="font-bold text-slate-900 text-base">Cessação da Composse</h3>
+          <h3 class="font-bold text-[#403812] text-base font-brand-title">Cessação da Composse</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Havendo posse exclusiva e localizada com <em>animus domini</em> sobre parcela delimitada do solo, cessa a composse ficta do espólio, autorizando a titulação definitiva em nome próprio (STJ).
+            Havendo posse exclusiva e localizada com <em>animus domini</em> e destinação produtiva sobre parcela física delimitada, cessa a composse do espólio, autorizando a declaração de propriedade individual em nome do possuidor.
           </p>
         </div>
+
       </div>
 
-      <!-- Precedent Quote Box -->
-      <div class="mt-6 bg-slate-900 text-slate-100 rounded-xl p-5 sm:p-6 border border-slate-800 relative">
-        <i class="fa-solid fa-quote-left text-brand-500 text-3xl opacity-20 absolute top-4 left-4"></i>
-        <div class="relative z-10 pl-6 sm:pl-8 border-l-2 border-brand-500 space-y-2">
-          <p class="text-xs sm:text-sm italic text-slate-200 leading-relaxed">
+      <!-- Citação dos Precedentes do STJ -->
+      <div class="mt-6 bg-[#403812] text-white rounded-xl p-5 sm:p-6 border border-[#28230B] relative">
+        <i class="fa-solid fa-quote-left text-brand-orange text-4xl opacity-20 absolute top-4 left-4"></i>
+        <div class="relative z-10 pl-6 sm:pl-8 border-l-2 border-brand-orange space-y-2">
+          <p class="text-xs sm:text-sm italic text-[#E1E1E1] leading-relaxed">
             "O condômino tem legitimidade para usucapir em nome próprio, desde que exerça a posse por si mesmo, ou seja, desde que comprovados os requisitos legais atinentes à usucapião, bem como tenha sido exercida posse exclusiva com animus domini pelo prazo determinado em lei, sem qualquer oposição dos demais proprietários."
           </p>
-          <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
+          <div class="flex flex-wrap items-center justify-between text-xs text-slate-300 pt-2 border-t border-white/10 gap-2">
             <span><strong>STJ, REsp nº 1.631.859/SP</strong> — Rel. Min. Nancy Andrighi (3ª Turma)</span>
-            <span class="text-brand-400 font-mono">Confirmado: AgInt no AREsp 2.355.307/SP (DJe 27/06/2024)</span>
+            <span class="text-brand-orange font-mono bg-white/10 px-2 py-0.5 rounded">
+              Precedente Persuasivo: AgInt no AREsp 2.355.307/SP (DJe 27/06/2024)
+            </span>
           </div>
         </div>
       </div>
@@ -335,407 +410,437 @@
     <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
       <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-100 gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-100">Seção 4 do Parecer</span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">Análise Comparativa de Viabilidade Registral</h2>
-          <p class="text-sm text-slate-500 mt-1">Confronte as duas vias estratégicas delineadas para a regularização dos 8,3000 ha em Guaíba/RS.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-orange bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200 font-brand-title">
+            Seção 4 do Parecer • Análise de Viabilidade
+          </span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#403812] font-brand-title mt-2">
+            Comparativo de Estratégias Registrais
+          </h2>
+          <p class="text-sm text-slate-500 mt-1">
+            Confronte a via bifásica (Estremação + Usucapião) com a via global unificada (Usucapião de 8,3 ha).
+          </p>
         </div>
-        <!-- Strategy Selector Tabs -->
+
+        <!-- Seletor de Estratégias -->
         <div class="inline-flex p-1 bg-slate-100 rounded-xl self-start">
-          <button id="tab-strat-a" onclick="switchStrategy('A')" class="px-4 py-2 text-xs font-bold rounded-lg transition tab-active shadow-sm">
-            Estratégia A: Via Híbrida / Bifásica
+          <button id="tab-btn-a" onclick="switchStratTab('A')" class="px-4 py-2 text-xs font-bold rounded-lg transition tab-active-strat font-brand-title">
+            Estratégia A: Via Bifásica
           </button>
-          <button id="tab-strat-b" onclick="switchStrategy('B')" class="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900 rounded-lg transition">
-            Estratégia B: Via Global Unificada
+          <button id="tab-btn-b" onclick="switchStratTab('B')" class="px-4 py-2 text-xs font-bold text-slate-600 hover:text-[#403812] rounded-lg transition font-brand-title">
+            Estratégia B: Via Unificada
           </button>
         </div>
       </div>
 
-      <!-- Strategy Content Display Container -->
       <div class="mt-6">
-        <!-- Strategy A Panel -->
-        <div id="panel-strat-a" class="space-y-6">
+        
+        <!-- Painel Estratégia A -->
+        <div id="strat-panel-a" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Fase 1: Estremação -->
-            <div class="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-200 relative">
-              <div class="flex items-center justify-between">
-                <span class="px-2.5 py-1 text-xs font-black rounded-lg bg-emerald-600 text-white font-mono uppercase">Passo 1 (5,30 ha)</span>
-                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">CNNR/CGJ-RS Arts. 526+</span>
+            
+            <!-- Etapa 1: Estremação -->
+            <div class="bg-[#F4F1EA] rounded-2xl p-6 border-2 border-[#403812]/30 relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-[#403812] text-white font-mono uppercase">
+                    Etapa 1 (5,30 ha)
+                  </span>
+                  <span class="text-xs font-bold text-[#403812] bg-white px-2 py-0.5 rounded border border-[#403812]/20 font-mono">
+                    CNNR/CGJ-RS Arts. 754+
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-[#403812] mt-3 font-brand-title">
+                  Estremação Rural (Projeto "Gleba Legal" RS)
+                </h3>
+                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                  Aplicável à cota ideal de 5,3 ha escriturada. Permite ao condômino rural com posse demarcada e localizada há mais de 5 anos lavrar <strong>Escritura Pública Declaratória de Localização</strong> e abrir matrícula própria perante o Registro de Imóveis de Guaíba.
+                </p>
               </div>
-              <h3 class="text-lg font-extrabold text-slate-900 mt-3">Estremação (Projeto "Gleba Legal" no RS)</h3>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Aplica-se à fração escriturada e registrada de 5,3 ha. Permite ao condômino rural com posse demarcada e localizada há mais de 5 anos extinguir o condomínio e abrir matrícula autônoma diretamente no Registro de Imóveis de Guaíba/RS.
-              </p>
-              
-              <div class="mt-4 bg-white rounded-xl p-3 border border-emerald-100 space-y-1.5 text-xs">
-                <div class="flex items-center text-slate-700">
-                  <i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>
-                  <span><strong>Vantagem no RS:</strong> Dispensa todos os herdeiros dos 32 ha.</span>
+
+              <div class="mt-4 bg-white rounded-xl p-3 border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                <div class="flex items-center">
+                  <i class="fa-solid fa-check text-brand-orange mr-2"></i>
+                  <span><strong>Vantagem no RS:</strong> Dispensa a anuência dos herdeiros dos 32 ha.</span>
                 </div>
-                <div class="flex items-center text-slate-700">
-                  <i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>
-                  <span>Exige somente a anuência dos confrontantes imediatos da cerca.</span>
+                <div class="flex items-center">
+                  <i class="fa-solid fa-check text-brand-orange mr-2"></i>
+                  <span>Exige somente anuência dos confrontantes imediatos da cerca.</span>
                 </div>
-                <div class="flex items-center text-slate-700">
-                  <i class="fa-solid fa-bolt text-amber-600 mr-2"></i>
-                  <span><strong>Resultado:</strong> Desvinculação imediata dos 5,3 ha do inventário.</span>
+                <div class="flex items-center">
+                  <i class="fa-solid fa-bolt text-[#403812] mr-2"></i>
+                  <span><strong>Resultado:</strong> Desvinculação da maior parcela do inventário.</span>
                 </div>
               </div>
             </div>
 
-            <!-- Fase 2: Usucapião 3.0 ha -->
-            <div class="bg-amber-50/50 rounded-2xl p-6 border border-amber-200 relative">
-              <div class="flex items-center justify-between">
-                <span class="px-2.5 py-1 text-xs font-black rounded-lg bg-amber-600 text-white font-mono uppercase">Passo 2 (3,00 ha)</span>
-                <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded border border-amber-300">Art. 216-A LRP / 1.238 CC</span>
+            <!-- Etapa 2: Usucapião 3,0 ha -->
+            <div class="bg-[#FFF6F0] rounded-2xl p-6 border-2 border-brand-orange/30 relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-brand-orange text-white font-mono uppercase">
+                    Etapa 2 (3,00 ha)
+                  </span>
+                  <span class="text-xs font-bold text-brand-orange bg-white px-2 py-0.5 rounded border border-brand-orange/30 font-mono">
+                    Art. 1.238, PU / 1.242 CC
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-[#403812] mt-3 font-brand-title">
+                  Usucapião Autônoma da Posse (Contrato 1999)
+                </h3>
+                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                  Para os 3,0 ha adquiridos por contrato particular da herdeira. O art. 1.793, § 2º do CC (cessão de bem singular) não impede a <strong>usucapião extraordinária</strong> (posse de 27 anos supera o prazo decenal da posse-trabalho sem exigência de justo título).
+                </p>
               </div>
-              <h3 class="text-lg font-extrabold text-slate-900 mt-3">Usucapião da Posse (Contrato de 1999)</h3>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Como os 3 ha foram adquiridos por contrato de gaveta da herdeira falecida, não há título tabular. Tramita via Usucapião Extrajudicial no RI ou Judicial autônoma (lapso de 27 anos supera com folga o prazo de 10 anos da posse-trabalho).
-              </p>
 
-              <div class="mt-4 bg-white rounded-xl p-3 border border-amber-100 space-y-1.5 text-xs">
-                <div class="flex items-center text-slate-700">
-                  <i class="fa-solid fa-circle-check text-amber-600 mr-2"></i>
+              <div class="mt-4 bg-white rounded-xl p-3 border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                <div class="flex items-center">
+                  <i class="fa-solid fa-check text-brand-orange mr-2"></i>
                   <span><strong>FMP Respeitada:</strong> 3,0 ha > 2,0 ha (FMP de Guaíba/RS).</span>
                 </div>
-                <div class="flex items-center text-slate-700">
-                  <i class="fa-solid fa-circle-check text-amber-600 mr-2"></i>
-                  <span>Gera nova matrícula autônoma de 3,0000 ha.</span>
+                <div class="flex items-center">
+                  <i class="fa-solid fa-check text-brand-orange mr-2"></i>
+                  <span>Tramita via RI (Art. 216-A LRP) ou via Judicial autônoma.</span>
                 </div>
-                <div class="flex items-center text-slate-700">
-                  <i class="fa-solid fa-link text-blue-600 mr-2"></i>
-                  <span><strong>Ato Final:</strong> Remembramento registral posterior (5,3 + 3,0 = 8,3 ha).</span>
+                <div class="flex items-center">
+                  <i class="fa-solid fa-link text-[#403812] mr-2"></i>
+                  <span><strong>Ato Final:</strong> Unificação/remembramento posterior dos 8,3000 ha.</span>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
-        <!-- Strategy B Panel -->
-        <div id="panel-strat-b" class="hidden space-y-6">
-          <div class="bg-sky-50/60 rounded-2xl p-6 sm:p-8 border border-sky-200">
+        <!-- Painel Estratégia B -->
+        <div id="strat-panel-b" class="hidden space-y-6">
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border-2 border-slate-300">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <span class="px-3 py-1 text-xs font-black rounded-lg bg-sky-600 text-white font-mono uppercase">Procedimento Único Integrado</span>
-              <span class="text-xs font-bold text-sky-800 bg-sky-100 px-2.5 py-1 rounded border border-sky-300">Art. 1.238 c/c 1.242 do Código Civil</span>
+              <span class="px-3 py-1 text-xs font-bold rounded-lg bg-[#403812] text-white font-mono uppercase">
+                Procedimento Único Integrado
+              </span>
+              <span class="text-xs font-bold text-slate-700 bg-white px-2.5 py-1 rounded border border-slate-300 font-mono">
+                Art. 1.238 c/c 1.242 do Código Civil
+              </span>
             </div>
-            
-            <h3 class="text-xl font-extrabold text-slate-900 mt-4">Usucapião Direta e Global dos 8,3000 ha</h3>
+
+            <h3 class="text-xl font-bold text-[#403812] mt-4 font-brand-title">
+              Usucapião Global e Direta dos 8,3000 ha
+            </h3>
             <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-              Consiste em ajuizar ação ou deflagrar pedido administrativo de Usucapião sobre a <strong>integralidade do perímetro contínuo de 8,3000 ha</strong>, sustentando a unidade produtiva familiar consolidada desde 1996 e 1999.
+              Consiste em ajuizar ação ou suscitar procedimento extrajudicial sobre a <strong>integralidade da poligonal contínua de 8,3000 ha</strong>, demonstrando que a unidade produtiva familiar foi exercida de forma indivisa e pacífica desde 1996 e 1999.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-              <div class="bg-white p-4 rounded-xl border border-sky-100 text-xs">
-                <strong class="text-sky-900 block mb-1 font-bold"><i class="fa-solid fa-file-shield text-sky-600 mr-1.5"></i>Peça Técnica Única</strong>
-                Apenas um georreferenciamento e uma ART/TRT sobre a poligonal fechada dos 8,3 ha.
+              <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
+                <strong class="text-[#403812] block mb-1 font-bold font-brand-title">
+                  <i class="fa-solid fa-file-shield text-brand-orange mr-1.5"></i>Peça Técnica Única
+                </strong>
+                Um único georreferenciamento e uma ART/TRT sobre a poligonal fechada dos 8,3 ha.
               </div>
-              <div class="bg-white p-4 rounded-xl border border-sky-100 text-xs">
-                <strong class="text-sky-900 block mb-1 font-bold"><i class="fa-solid fa-stamp text-sky-600 mr-1.5"></i>Justos Títulos Somados</strong>
-                A escritura de 1996 e o contrato de 1999 consubstanciam prova irrefutável de boa-fé e animus domini.
+              <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
+                <strong class="text-[#403812] block mb-1 font-bold font-brand-title">
+                  <i class="fa-solid fa-stamp text-brand-orange mr-1.5"></i>Justos Títulos Somados
+                </strong>
+                A escritura de 1996 e o contrato de 1999 instruem a prova da boa-fé e origem do domínio.
               </div>
-              <div class="bg-white p-4 rounded-xl border border-sky-100 text-xs">
-                <strong class="text-sky-900 block mb-1 font-bold"><i class="fa-solid fa-certificate text-sky-600 mr-1.5"></i>Matrícula Direta</strong>
-                Resulta na emissão direta de uma matrícula definitiva de 8,3000 ha sem necessidade de remembramento.
+              <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
+                <strong class="text-[#403812] block mb-1 font-bold font-brand-title">
+                  <i class="fa-solid fa-certificate text-brand-orange mr-1.5"></i>Matrícula Direta
+                </strong>
+                Abre uma única matrícula de 8,3000 ha sem necessidade de ato futuro de remembramento.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Comparative Matrix Table -->
+        <!-- Matriz Comparativa Tabular -->
         <div class="mt-8 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <div class="bg-slate-100 px-6 py-3 border-b border-slate-200 flex items-center justify-between">
-            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-700">Quadro Comparativo: Critérios de Decisão</span>
-            <span class="text-xs text-slate-500 font-mono">Análise de Risco & Celeridade</span>
+          <div class="bg-[#403812] px-6 py-3 text-white flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider font-brand-title">Matriz de Decisão: Critérios Técnicos</span>
+            <span class="text-xs text-brand-gray font-mono">Análise de Risco & Celeridade</span>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs sm:text-sm">
-              <thead class="bg-slate-50 text-slate-600 border-b border-slate-200 font-bold uppercase text-[11px]">
+              <thead class="bg-[#F7F5F0] text-[#403812] border-b border-slate-200 font-bold uppercase text-[11px] font-brand-title">
                 <tr>
-                  <th class="py-3 px-4">Critério Técnico</th>
-                  <th class="py-3 px-4 text-emerald-800 bg-emerald-50/50">Estratégia A (Bifásica: Estremação + Usucapião)</th>
-                  <th class="py-3 px-4 text-sky-800 bg-sky-50/50">Estratégia B (Unificada: Usucapião 8,3 ha)</th>
+                  <th class="py-3 px-4">Critério Técnico-Jurídico</th>
+                  <th class="py-3 px-4 text-[#403812] bg-[#F4F1EA]">Estratégia A (Bifásica: Estremação + Usucapião)</th>
+                  <th class="py-3 px-4 text-brand-orange bg-[#FFF6F0]">Estratégia B (Unificada: Usucapião 8,3 ha)</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 text-slate-700">
                 <tr>
-                  <td class="py-3 px-4 font-semibold">Celeridade para a maior área (5,3 ha)</td>
-                  <td class="py-3 px-4 text-emerald-700 font-bold"><i class="fa-solid fa-bolt mr-1"></i> Imediata (Direto no RI em 60 a 90 dias)</td>
-                  <td class="py-3 px-4 text-slate-500">Depende do prazo integral do processo de usucapião</td>
+                  <td class="py-3 px-4 font-semibold">Celeridade na maior parcela (5,3 ha)</td>
+                  <td class="py-3 px-4 text-emerald-800 font-bold bg-[#F4F1EA]/40">
+                    <i class="fa-solid fa-bolt mr-1 text-brand-orange"></i> Imediata no RI (60 a 90 dias após protocolo)
+                  </td>
+                  <td class="py-3 px-4 text-slate-500 bg-[#FFF6F0]/40">
+                    Depende do desfecho do processo global de usucapião
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold">Exigência de anuência de herdeiros da área de 32 ha</td>
-                  <td class="py-3 px-4 text-emerald-700 font-bold"><i class="fa-solid fa-check mr-1"></i> DISPENSADA (Art. 526 CNNR/RS exige só a cerca)</td>
-                  <td class="py-3 px-4 text-slate-600">Espólio e herdeiros serão notificados por edital/AR</td>
+                  <td class="py-3 px-4 font-semibold">Anuência dos herdeiros dos 32 ha</td>
+                  <td class="py-3 px-4 text-emerald-800 font-bold bg-[#F4F1EA]/40">
+                    <i class="fa-solid fa-check mr-1 text-brand-orange"></i> Dispensada (Art. 754 CNNR/RS exige apenas a cerca)
+                  </td>
+                  <td class="py-3 px-4 text-slate-600 bg-[#FFF6F0]/40">
+                    Espólio e herdeiros serão notificados formalmente
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold">Risco de impugnação</td>
-                  <td class="py-3 px-4 text-emerald-700 font-bold">MUITO BAIXO (na fração escriturada)</td>
-                  <td class="py-3 px-4 text-amber-700 font-medium">Médio (pode suscitar manifestação de algum herdeiro)</td>
+                  <td class="py-3 px-4 font-semibold">Risco de oposição</td>
+                  <td class="py-3 px-4 font-semibold text-[#403812] bg-[#F4F1EA]/40">
+                    Fracionado (Mínimo na estremação; residual nos 3 ha)
+                  </td>
+                  <td class="py-3 px-4 text-amber-700 font-medium bg-[#FFF6F0]/40">
+                    Concentrado (Impugnação sobre 3 ha paralisa tudo)
+                  </td>
                 </tr>
                 <tr>
                   <td class="py-3 px-4 font-semibold">Custo de atos registrais</td>
-                  <td class="py-3 px-4">Dois procedimentos (Estremação + Usucapião + Remembramento)</td>
-                  <td class="py-3 px-4 text-emerald-700 font-bold">Um único procedimento registral</td>
+                  <td class="py-3 px-4 bg-[#F4F1EA]/40">
+                    Dois procedimentos (Escritura + Usucapião + Fusão)
+                  </td>
+                  <td class="py-3 px-4 text-emerald-800 font-bold bg-[#FFF6F0]/40">
+                    Procedimento único perante a Serventia
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold">Indicação do Parecer</td>
-                  <td class="py-3 px-4 font-black text-brand-700 bg-emerald-100/50">RECOMENDADA (Maior Segurança Registral no RS)</td>
-                  <td class="py-3 px-4 font-bold text-sky-700 bg-sky-100/50">Alternativa (Se houver conflito com confrontantes)</td>
+                  <td class="py-3 px-4 font-semibold">Prognóstico Técnico</td>
+                  <td class="py-3 px-4 font-bold text-[#403812] bg-amber-100/60">
+                    RECOMENDADA EM TESE (Maior Segurança no RS)
+                  </td>
+                  <td class="py-3 px-4 font-bold text-brand-orange bg-orange-100/60">
+                    ALTERNATIVA VIÁVEL (Se houver conflito de cerca)
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
       </div>
     </section>
 
     <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
       <div class="max-w-3xl">
-        <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-100">Diagnóstico Cadastral & Ambiental</span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">O Triângulo Agrário: INCRA, ITR e CAR</h2>
-        <p class="text-sm text-slate-500 mt-1">Como solucionar as notificações cadastrais e a segurança ambiental da propriedade.</p>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-orange bg-orange-50 px-2.5 py-1 rounded-md border border-orange-200 font-brand-title">
+          Diagnóstico Cadastral & Ambiental
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-[#403812] font-brand-title mt-2">
+          O Triângulo Agrário: INCRA, ITR e CAR
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">
+          Como resolver as notificações cadastrais e proteger a conformidade ambiental do imóvel rural.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        <!-- INCRA Card -->
-        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col justify-between">
+        
+        <!-- INCRA / SNCR -->
+        <div class="bg-brand-cream rounded-2xl p-5 border border-[#E8E4DA] flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800">INCRA / SNCR</span>
-              <i class="fa-solid fa-wheat-awn text-amber-600 text-lg"></i>
+              <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-[#403812] text-white whitespace-nowrap">
+                INCRA / SNCR
+              </span>
+              <i class="fa-solid fa-wheat-awn text-brand-orange text-lg"></i>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base mt-3">Notificação de Remembrança</h3>
+            <h3 class="font-bold text-[#403812] text-base mt-3 font-brand-title">
+              Regras do Cadastro Rural (CCIR)
+            </h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              O INCRA não admite que fração ideal em condomínio mantenha código de CCIR destacado sem correspondência de matrícula individual no Registro de Imóveis.
+              O INCRA não admite CCIR destacado para fração ideal em condomínio sem a correspondente matrícula autônoma no Registro de Imóveis. A exigência decorre de normas internas do SNCR.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-emerald-800 font-semibold bg-emerald-50 p-2.5 rounded-lg">
-            <i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> Solução: A nova matrícula (via Estremação/Usucapião) gera direito potestativo ao CCIR autônomo.
+          <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-[#403812] bg-white p-3 rounded-lg border border-slate-200 font-medium">
+            <i class="fa-solid fa-circle-info mr-1 text-brand-orange"></i> Solução: A matrícula nova (via Estremação ou Usucapião) viabilizará o requerimento de CCIR individualizado.
           </div>
         </div>
 
-        <!-- ITR Card -->
-        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col justify-between">
+        <!-- Receita Federal / ITR -->
+        <div class="bg-brand-cream rounded-2xl p-5 border border-[#E8E4DA] flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-800">Receita Federal / ITR</span>
-              <i class="fa-solid fa-receipt text-blue-600 text-lg"></i>
+              <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-[#403812] text-white whitespace-nowrap">
+                RECEITA FEDERAL / ITR
+              </span>
+              <i class="fa-solid fa-receipt text-brand-orange text-lg"></i>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base mt-3">CIB / NIRF dos 32 ha</h3>
+            <h3 class="font-bold text-[#403812] text-base mt-3 font-brand-title">
+              CIB / NIRF dos 32 ha
+            </h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              Dificuldade de localizar o CIB geral e falta de pagamento pelos herdeiros. Manter a guarda rigorosa de todas as guias de CCIR e tributos pagos pela consulente nos últimos 5 anos.
+              A omissão fiscal dos demais herdeiros da área de 32 ha não prejudica a consulente. A guarda de todos os comprovantes e taxas recolhidas nos últimos anos é essencial.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-700 bg-slate-100 p-2.5 rounded-lg">
-            <i class="fa-solid fa-scale-balanced mr-1 text-slate-600"></i> Comprovantes pagos instruem a prova da posse <em>pro labore</em> e de boa-fé.
+          <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-[#403812] bg-white p-3 rounded-lg border border-slate-200 font-medium">
+            <i class="fa-solid fa-scale-balanced mr-1 text-brand-orange"></i> Função Probatória: As guias quitadas instruem a prova da posse <em>pro labore</em> e de boa-fé.
           </div>
         </div>
 
-        <!-- CAR Card -->
-        <div class="bg-emerald-50 rounded-2xl p-5 border border-emerald-200 flex flex-col justify-between">
+        <!-- CAR / SiCAR-RS -->
+        <div class="bg-[#FFF6F0] rounded-2xl p-5 border border-brand-orange/30 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-emerald-200 text-emerald-900">SiCAR / RS</span>
-              <i class="fa-solid fa-leaf text-emerald-600 text-lg"></i>
+              <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-brand-orange text-white whitespace-nowrap">
+                SiCAR / RS (SEMA)
+              </span>
+              <i class="fa-solid fa-leaf text-emerald-700 text-lg"></i>
             </div>
-            <h3 class="font-extrabold text-slate-900 text-base mt-3">Inscrição Obrigatória e Imediata</h3>
+            <h3 class="font-bold text-[#403812] text-base mt-3 font-brand-title">
+              Cadastro Ambiental Rural
+            </h3>
             <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-              O CAR é obrigatório por Lei Federal (art. 29 da Lei 12.651/2012) para todo imóvel rural. <strong>O CAR é declaratório da posse fática!</strong>
+              O CAR é obrigatório por Lei Federal (art. 29 da Lei 12.651/2012) e de natureza <strong>declaratória da posse fática</strong>, independendo de prévia matrícula registrada.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-emerald-200 text-xs font-bold text-emerald-900 bg-white p-2.5 rounded-lg border border-emerald-100">
-            <i class="fa-solid fa-circle-arrow-right mr-1 text-emerald-600"></i> Cadastrar imediatamente o shapefile de 8,3 ha no SiCAR/RS em nome da consulente.
+          <div class="mt-4 pt-3 border-t border-orange-200 text-xs font-semibold text-[#7A330B] bg-white p-3 rounded-lg border border-orange-200">
+            <i class="fa-solid fa-triangle-exclamation mr-1 text-brand-orange"></i> Cautela no RS: Pesquisar se já existe CAR da área de 32 ha antes de protocolar os 8,3 ha, evitando sobreposição cartográfica.
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-100">Roteiro Executivo</span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">Plano de Ação Interativo (Checklist)</h2>
-          <p class="text-sm text-slate-500 mt-1">Marque as etapas executadas para acompanhar o progresso da regularização.</p>
-        </div>
-        <div class="flex items-center space-x-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
-          <span class="text-xs text-slate-500 font-semibold">Progresso Geral:</span>
-          <span id="progress-percent" class="text-base font-extrabold text-brand-600 font-mono">0%</span>
-        </div>
-      </div>
-
-      <!-- Checklist Items -->
-      <div class="mt-6 space-y-4">
-        <!-- Item 1 -->
-        <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:border-brand-500 bg-slate-50/50 cursor-pointer transition select-none">
-          <input type="checkbox" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500" onchange="updateProgress()">
-          <div class="ml-3.5">
-            <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-slate-200 text-slate-700 mr-2">Fase 1</span>
-            <span class="text-sm font-bold text-slate-900">Auditoria Documental Imediata (Diligência Crucial)</span>
-            <p class="text-xs text-slate-600 mt-1">Obter certidão de inteiro teor atualizada com ônus e ações das 2 matrículas-mãe no Registro de Imóveis de Guaíba/RS e localizar os contratos/escrituras originais de 1996 e 1999.</p>
-          </div>
-        </label>
-
-        <!-- Item 2 -->
-        <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:border-brand-500 bg-slate-50/50 cursor-pointer transition select-none">
-          <input type="checkbox" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500" onchange="updateProgress()">
-          <div class="ml-3.5">
-            <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-slate-200 text-slate-700 mr-2">Fase 2</span>
-            <span class="text-sm font-bold text-slate-900">Desvinculação do Inventário Alheio</span>
-            <p class="text-xs text-slate-600 mt-1">Peticionar desistência da habilitação ou ação conexa nos autos do inventário de 26 anos, cessando a dependência de certidão de óbito do IML e da curatela de terceiros.</p>
-          </div>
-        </label>
-
-        <!-- Item 3 -->
-        <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:border-brand-500 bg-slate-50/50 cursor-pointer transition select-none">
-          <input type="checkbox" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500" onchange="updateProgress()">
-          <div class="ml-3.5">
-            <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 mr-2">Fase 3</span>
-            <span class="text-sm font-bold text-slate-900">Inscrição Imediata no CAR (SiCAR/RS)</span>
-            <p class="text-xs text-slate-600 mt-1">Lançar o shapefile do georreferenciamento já pronto (8,3 ha) no SiCAR/RS em nome da possuidora, assegurando conformidade ambiental sem depender do registro da matrícula.</p>
-          </div>
-        </label>
-
-        <!-- Item 4 -->
-        <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:border-brand-500 bg-slate-50/50 cursor-pointer transition select-none">
-          <input type="checkbox" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500" onchange="updateProgress()">
-          <div class="ml-3.5">
-            <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-brand-200 text-brand-900 mr-2">Fase 4</span>
-            <span class="text-sm font-bold text-slate-900">Protocolo da Estremação dos 5,3 ha no RI de Guaíba</span>
-            <p class="text-xs text-slate-600 mt-1">Apresentar memorial e colher assinatura dos vizinhos imediatos da cerca, desmembrando e registrando matrícula autônoma com base no Projeto Gleba Legal (CNNR/CGJ-RS).</p>
-          </div>
-        </label>
-
-        <!-- Item 5 -->
-        <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:border-brand-500 bg-slate-50/50 cursor-pointer transition select-none">
-          <input type="checkbox" class="mt-1 w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500" onchange="updateProgress()">
-          <div class="ml-3.5">
-            <span class="text-xs font-bold uppercase font-mono px-2 py-0.5 rounded bg-amber-200 text-amber-900 mr-2">Fase 5</span>
-            <span class="text-sm font-bold text-slate-900">Usucapião dos 3,0 ha & Remembramento Final</span>
-            <p class="text-xs text-slate-600 mt-1">Deflagrar a usucapião da posse complementar de 1999 e, em seguida, promover a fusão/remembramento das duas matrículas contíguas, consolidando a propriedade plena dos 8,3000 ha.</p>
-          </div>
-        </label>
       </div>
     </section>
 
   </main>
 
-  <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-10 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
+  <footer class="bg-[#403812] text-slate-300 border-t-2 border-brand-orange py-10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
       <div>
-        <div class="flex items-center justify-center sm:justify-start space-x-2 text-white font-extrabold text-base">
-          <i class="fa-solid fa-stamp text-brand-500"></i>
-          <span>Parecer Técnico-Jurídico Fundiário</span>
+        <div class="flex items-center justify-center md:justify-start space-x-2 text-white font-bold text-base font-brand-title">
+          <i class="fa-solid fa-scale-balanced text-brand-orange"></i>
+          <span>MAURICIO RANZAN ADVOCACIA ESPECIALIZADA</span>
         </div>
-        <p class="text-xs text-slate-500 mt-1">Comarca de Guaíba/RS • Direito Notarial, Registral e Agrário</p>
+        <p class="text-xs text-slate-300 mt-1.5 font-sans font-medium tracking-wide">
+          Inteligência ambiental, agrária, fundiária e territorial
+        </p>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-3 text-xs text-slate-300">
+          <a href="https://wa.me/5549984385949" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition flex items-center space-x-1.5 whitespace-nowrap">
+            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+            <span>+55 (49) 98438-5949</span>
+          </a>
+          <a href="mailto:mauricio@ranzanadv.com" class="hover:text-brand-orange transition flex items-center space-x-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-envelope text-brand-orange"></i>
+            <span>mauricio@ranzanadv.com</span>
+          </a>
+          <a href="https://ranzanadv.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition flex items-center space-x-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-globe text-brand-gray"></i>
+            <span>ranzanadv.com</span>
+          </a>
+        </div>
       </div>
 
-      <div class="text-xs text-center sm:text-right text-slate-400">
-        <p class="font-bold text-slate-200">Mauricio Luiz Ranzan</p>
-        <p class="text-slate-400 font-mono">OAB/SC 79.625</p>
-        <p class="text-slate-500 mt-0.5">Sob reserva de conferência documental física • Outubro/2026</p>
+      <div class="text-xs text-center md:text-right text-slate-400">
+        <p class="font-bold text-white font-brand-title text-sm">Mauricio Luiz Ranzan</p>
+        <p class="text-brand-orange font-mono font-semibold">OAB/SC 79.625</p>
+        <p class="text-slate-400 mt-0.5">Quilombo/SC • Parecer Emitido em 09/10/2026</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // State storage for polygon view
-    const polygonData = {
+    // Dados Dinâmicos das Glebas
+    const glebaData = {
       all: {
-        title: "Perímetro Total Consolidado (8,3000 ha)",
+        title: "Perímetro Consolidado Total (8,3000 ha)",
         area: "8,3000 ha (100% da posse familiar)",
-        status: "Posse mansa contínua desde 1996 e 1999",
-        regime: "2 Realidades Jurídicas Heterogêneas Contíguas",
-        action: "Unificação pretendida mediante Estremação (5,3 ha) + Usucapião (3,0 ha)"
+        status: "Posse mansa exercida desde 1996 e 1999 (27 a 30 anos)",
+        regime: "Duas realidades jurídicas heterogêneas contíguas",
+        action: "Estratégia A (Estremação + Usucapião) ou Estratégia B (Usucapião Global)",
+        fmpStatus: "Atende amplamente à FMP de Guaíba (2,0 ha) e Módulo Fiscal (14,0 ha)"
       },
       titulada: {
-        title: "Gleba 01 - Fração Titulada (5,3000 ha)",
-        area: "5,3000 ha (63,8% do sítio)",
-        status: "Escritura pública de cessão/doação de 1996",
+        title: "Gleba 01 - Fração Escriturada (5,3000 ha)",
+        area: "5,3000 ha (63,85% do sítio)",
+        status: "Escritura de cessão/doação de 1996 (30 anos de posse)",
         regime: "Condomínio pro indiviso na matrícula-mãe de 32 ha",
-        action: "ESTREMAÇÃO DIRETA no Registro de Imóveis (Projeto Gleba Legal RS)"
+        action: "ESTREMAÇÃO RURAL (Projeto Gleba Legal - CNNR/CGJ-RS Arts. 754 e seguintes)",
+        fmpStatus: "5,30 ha > 2,00 ha (FMP de Guaíba/RS) - Plenamente individualizável"
       },
       posse: {
-        title: "Gleba 02 - Posse Fática (3,0000 ha)",
-        area: "3,0000 ha (36,2% do sítio)",
-        status: "Contrato particular de gaveta de 1999 (27 anos de posse)",
-        regime: "Posse autônoma com animus domini e destinação rural",
-        action: "USUCAPIÃO EXTRAJUDICIAL (Art. 216-A LRP) ou Judicial"
+        title: "Gleba 02 - Posse Contratual (3,0000 ha)",
+        area: "3,0000 ha (36,15% do sítio)",
+        status: "Contrato particular de gaveta de 1999 (27 anos de posse contínua)",
+        regime: "Posse autônoma com animus domini e destinação produtiva pro labore",
+        action: "USUCAPIÃO EXTRAJUDICIAL (Art. 216-A LRP) ou Judicial (Art. 1.238, PU CC)",
+        fmpStatus: "3,00 ha > 2,00 ha (FMP de Guaíba/RS) - Supera a fração mínima"
       }
     };
 
-    function setPolygonFilter(type) {
-      // Button states
-      document.getElementById('btn-view-all').className = type === 'all' ? 'px-3 py-1.5 text-xs font-bold rounded-lg bg-white shadow-sm text-slate-800 transition' : 'px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-lg transition';
-      document.getElementById('btn-view-titulada').className = type === 'titulada' ? 'px-3 py-1.5 text-xs font-bold rounded-lg bg-white shadow-sm text-slate-800 transition' : 'px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-lg transition';
-      document.getElementById('btn-view-posse').className = type === 'posse' ? 'px-3 py-1.5 text-xs font-bold rounded-lg bg-white shadow-sm text-slate-800 transition' : 'px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 rounded-lg transition';
+    // Função de Filtro Visual do SVG
+    function updateGlebaView(type) {
+      // Estilos dos botões com whitespace-nowrap garantido
+      const btnAll = document.getElementById('btn-svg-all');
+      const btn53 = document.getElementById('btn-svg-53');
+      const btn30 = document.getElementById('btn-svg-30');
 
-      // SVG visual highlighting
-      const elTitulada = document.getElementById('svg-gleba-titulada');
-      const elPosse = document.getElementById('svg-gleba-posse');
+      btnAll.className = type === 'all' 
+        ? 'px-3.5 py-1.5 text-xs font-bold rounded-lg bg-white text-[#403812] shadow-sm transition whitespace-nowrap' 
+        : 'px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-[#403812] rounded-lg transition whitespace-nowrap';
+      btn53.className = type === 'titulada' 
+        ? 'px-3.5 py-1.5 text-xs font-bold rounded-lg bg-white text-[#403812] shadow-sm transition whitespace-nowrap' 
+        : 'px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-[#403812] rounded-lg transition whitespace-nowrap';
+      btn30.className = type === 'posse' 
+        ? 'px-3.5 py-1.5 text-xs font-bold rounded-lg bg-white text-[#403812] shadow-sm transition whitespace-nowrap' 
+        : 'px-3.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-[#403812] rounded-lg transition whitespace-nowrap';
+
+      // Opacidade dos polígonos no SVG
+      const el53 = document.getElementById('gleba-53-group');
+      const el30 = document.getElementById('gleba-30-group');
 
       if (type === 'all') {
-        elTitulada.style.opacity = '1';
-        elPosse.style.opacity = '1';
+        el53.style.opacity = '1';
+        el30.style.opacity = '1';
       } else if (type === 'titulada') {
-        elTitulada.style.opacity = '1';
-        elPosse.style.opacity = '0.25';
+        el53.style.opacity = '1';
+        el30.style.opacity = '0.2';
       } else if (type === 'posse') {
-        elTitulada.style.opacity = '0.25';
-        elPosse.style.opacity = '1';
+        el53.style.opacity = '0.2';
+        el30.style.opacity = '1';
       }
 
-      // Update Card
-      const item = polygonData[type];
-      document.getElementById('info-card-content').innerHTML = `
-        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
-          <h4 class="font-extrabold text-slate-900 text-sm">${item.title}</h4>
-          <span class="font-mono text-xs font-bold text-brand-600">${item.area}</span>
+      // Atualiza o Card de Detalhes
+      const item = glebaData[type];
+      document.getElementById('card-gleba-details').innerHTML = `
+        <div class="flex items-center justify-between border-b border-[#E8E4DA] pb-2">
+          <h4 class="font-bold text-[#403812] text-sm font-brand-title">${item.title}</h4>
+          <span class="font-mono text-xs font-bold text-brand-orange bg-white px-2 py-0.5 rounded border border-[#E8E4DA] whitespace-nowrap">${item.area}</span>
         </div>
-        <div class="text-xs space-y-2 text-slate-600 pt-1">
-          <p><strong>Origem/Documento:</strong> ${item.status}</p>
-          <p><strong>Regime Jurídico:</strong> ${item.regime}</p>
-          <div class="p-2.5 bg-emerald-100/60 rounded-lg text-emerald-900 font-semibold border border-emerald-200/80">
-            <i class="fa-solid fa-arrow-right mr-1.5 text-brand-600"></i> ${item.action}
+        <div class="text-xs space-y-2 text-slate-700 pt-1">
+          <p><strong>Origem Fática/Documental:</strong> ${item.status}</p>
+          <p><strong>Regime Dominial:</strong> ${item.regime}</p>
+          <p class="text-emerald-800 font-medium"><i class="fa-solid fa-check mr-1 text-brand-orange"></i>${item.fmpStatus}</p>
+          <div class="p-2.5 bg-[#403812] rounded-xl text-white font-semibold text-xs mt-2 border border-[#28230B]">
+            <i class="fa-solid fa-arrow-right mr-1.5 text-brand-orange"></i> ${item.action}
           </div>
         </div>
       `;
     }
 
-    // Switch between Strategy tabs
-    function switchStrategy(strat) {
-      const tabA = document.getElementById('tab-strat-a');
-      const tabB = document.getElementById('tab-strat-b');
-      const panelA = document.getElementById('panel-strat-a');
-      const panelB = document.getElementById('panel-strat-b');
+    // Alternador de Abas de Estratégia
+    function switchStratTab(strat) {
+      const btnA = document.getElementById('tab-btn-a');
+      const btnB = document.getElementById('tab-btn-b');
+      const panelA = document.getElementById('strat-panel-a');
+      const panelB = document.getElementById('strat-panel-b');
 
       if (strat === 'A') {
-        tabA.className = 'px-4 py-2 text-xs font-bold rounded-lg transition tab-active shadow-sm';
-        tabB.className = 'px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900 rounded-lg transition';
+        btnA.className = 'px-4 py-2 text-xs font-bold rounded-lg transition tab-active-strat font-brand-title whitespace-nowrap';
+        btnB.className = 'px-4 py-2 text-xs font-bold text-slate-600 hover:text-[#403812] rounded-lg transition font-brand-title whitespace-nowrap';
         panelA.classList.remove('hidden');
         panelB.classList.add('hidden');
       } else {
-        tabB.className = 'px-4 py-2 text-xs font-bold rounded-lg transition tab-active shadow-sm';
-        tabA.className = 'px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900 rounded-lg transition';
+        btnB.className = 'px-4 py-2 text-xs font-bold rounded-lg transition tab-active-strat font-brand-title whitespace-nowrap';
+        btnA.className = 'px-4 py-2 text-xs font-bold text-slate-600 hover:text-[#403812] rounded-lg transition font-brand-title whitespace-nowrap';
         panelB.classList.remove('hidden');
         panelA.classList.add('hidden');
       }
     }
 
-    // Interactive Checklist progress calculation
-    function updateProgress() {
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      let checkedCount = 0;
-      checkboxes.forEach(cb => {
-        if (cb.checked) checkedCount++;
-      });
-      const percent = Math.round((checkedCount / checkboxes.length) * 100);
-      document.getElementById('progress-percent').innerText = `${percent}%`;
-    }
-
-    // Initialize default state on load
+    // Inicialização ao carregar a página
     window.onload = function() {
-      setPolygonFilter('all');
-      updateProgress();
+      updateGlebaView('all');
     };
   </script>
 </body>
